@@ -10,16 +10,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-   
-
    <Router>
-      <div>
         <Routes>
-          <Route path="/" exact component={OpeningPage} />
-          <Route path="/booking/:name" component={BookingPage} />
+          <Route path="/"  element={<OpeningPage/>} />
+          <Route path="/booking/:name" element={<BookingPage/>} />
           {/* <Route path="/page2" component={Page2} /> */}
         </Routes>
-      </div>
     </Router>
     </div>
   );
