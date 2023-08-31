@@ -64,12 +64,15 @@ export const BookingPage = () => {
 const BookingStepCard = ({ step }) => {
   return (
     <div className="card">
-      <h3>step: {step}</h3>
-      {/* You can add more content here related to each booking step */}
+      {step === "tickets" && TicketView}
+      {/* {<div>Helloooooooo</div>} */}
     </div>
   );
 };
 
+const Example1 = () => {
+  return <div className="card">{<div>first render</div>}</div>;
+};
 export const CampingInformationCard = ({ area, spots, availability }) => {
   return (
     <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
@@ -86,7 +89,7 @@ export const CampingInformationCard = ({ area, spots, availability }) => {
             </span>
           </p>
           <a
-            href="#"
+            href="/"
             className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 
         text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 
         focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
