@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { getAvailableSpots } from "../api";
 import { TicketView } from "../components/booking/TicketView";
 import { AccommodationView } from "../components/booking/AccommodationView";
+import { CheckoutView } from "../components/booking/CheckoutView";
 
 import "./pages.css";
 const bookingSteps = [
   { name: "tickets", view: TicketView },
   { name: "accommodation", view: AccommodationView },
-  { name: "checkout", TicketView },
+  { name: "checkout", view: CheckoutView },
 ];
 export const BookingPage = () => {
   const [availableSpots, setAvailableSpots] = useState([]);
@@ -15,6 +16,8 @@ export const BookingPage = () => {
   const [tickets, setTickets] = useState(0);
 
   const [accommodation, setAccommodation] = useState([]);
+
+  const [checkout, setCheckout] = useState(0);
 
   const [step, setStep] = useState(0);
 
@@ -33,21 +36,10 @@ export const BookingPage = () => {
       {bookingSteps.map(({ name }, index) => {
         if (index === step) {
           return (
-            <div className="h-screen w-screen">
+            <div className="h-screen w-screen p-4 text-blue-500 text-transform: capitalize cursor-pointer text-6xl font-semibold">
               {name}
               <BookingStepCard step={name} />
-            </div>
-          );
-        }
-
-        return (
-          <div>
-            {name}
-            <BookingStepCard step={name} />
-          </div>
-        );
-      })}
-      {currentStep.view && <currentStep.view setTickets={setTickets} />}
+              {currentStep.view && <currentStep.view setTickets={setTickets} />}
       <button
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         onClick={() => {
@@ -56,7 +48,19 @@ export const BookingPage = () => {
       >
         Next
       </button>
-      Total tickets: {tickets}
+            </div>
+          );
+        }
+
+        return (
+          <div className=" bg-pastel-orange p-4 text-blue-500 text-transform: capitalize cursor-pointer text-6xl font-semibold hover:bg-blue-500 ">
+            {name}
+            
+            <BookingStepCard step={name} />
+          </div>
+        );
+      })}
+      
     </div>
   );
 };

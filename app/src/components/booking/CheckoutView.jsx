@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export const AccommodationView = (props) => {
+export const CheckoutView = (props) => {
   return (
     <div className="flex border-solid h-auto w-full border-blue-500 border-8 ">
       {/* Left Column */}
