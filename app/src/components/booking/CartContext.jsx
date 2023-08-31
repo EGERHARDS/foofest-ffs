@@ -3,7 +3,13 @@ import React, { createContext, useState, useContext } from 'react';
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState({ standard: 0, elite: 0 });
+    const [cart, setCart] = useState({
+        standard: 0,
+        elite: 0,
+        twoperson: 0,
+        threeperson: 0
+      });
+      
 
     return (
         <CartContext.Provider value={{ cart, setCart }}>

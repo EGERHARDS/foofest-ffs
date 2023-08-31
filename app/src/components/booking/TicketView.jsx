@@ -1,19 +1,21 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import TicketSelector from "./TicketSelector";
 import Cart from "./Cart";
 import { useCart } from './CartContext';
-
 
 export const TicketView = (props) => {
   const { cart, setCart } = useCart();
 
   const handleAddToCart = (standard, elite) => {
-    setCart({ standard, elite });
+    setCart(prevCart => ({
+      ...prevCart,
+      standard,
+      elite
+    }));
   };
 
   return (
-    <div className="flex border-solid h-auto w-full border-blue-500 border-8 ">
+    <div className="flex border-solid h-full w-full border-blue-500 border-8 ">
       {/* Left Column */}
       <div className="flex-1 flex flex-col justify-between p-4">
         {/* Space for text */}
@@ -35,7 +37,7 @@ export const TicketView = (props) => {
       {/* Right Column */}
       <div className="flex-1 p-4">
         <div className="flex-1 p-4">
-        <Cart cart={cart} />  {/* Use the Cart component here */}
+        <Cart />  {/* Use the Cart component here */}
       </div>
       </div>
     </div>

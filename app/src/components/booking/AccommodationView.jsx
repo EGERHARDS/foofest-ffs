@@ -1,16 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import Cart from "./Cart";
+import AccomSelector from "./AccomSelector";
 import { useCart } from "./CartContext";
 
 export const AccommodationView = (props) => {
   const { cart, setCart } = useCart();
-  const handleAddToCart = (standard, elite) => {
-    setCart({ standard, elite });
+
+  const handleAddToCart = (twoperson, threeperson) => {
+    setCart(prevCart => ({
+      ...prevCart,
+      twoperson,
+      threeperson
+    }));
   };
 
   return (
-    <div className="flex border-solid h-auto w-full border-blue-500 border-8 ">
+    <div className="flex border-solid h-full w-full border-blue-500 border-8 ">
       {/* Left Column */}
       <div className="flex-1 flex flex-col justify-between p-4">
         {/* Space for text */}
@@ -27,20 +32,12 @@ export const AccommodationView = (props) => {
           with your preferences!
         </div>
         {/* Space for buttons */}
-        <div className="flex">
-          <p className="text-sm">Standard</p>
-          <button className="mr-2 text-sm">Button 1</button>
-          <p className="text-sm">Elite</p>
-          <button className="mr-2 text-sm">Button 2</button>
-        </div>
+        <AccomSelector onAddToCart={handleAddToCart} />
       </div>
 
       {/* Right Column */}
       <div className="flex-1 p-4">
-        {/* Empty space */}
-        <div className="flex-1 p-4">
-          <Cart cart={cart} /> {/* Use the Cart component here */}
-        </div>
+        <Cart cart={cart} /> {/* Use the Cart component here */}
       </div>
     </div>
   );

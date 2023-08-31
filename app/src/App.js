@@ -6,6 +6,7 @@ import {Homepage} from './pages/Homepage';
 import { CartProvider } from './components/booking/CartContext';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { AccommodationView } from './components/booking/AccommodationView';
 
 
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/home"  element={<Homepage/>} />
           <Route path="/enter"  element={<OpeningPage/>} />
           <Route path="/booking/:name" element={<BookingPage/>} />
+          <Route path="/booking/:name" element={<AccommodationView/>} />
           <Route path="/contact" element={<OpeningPage/>} />
           <Route path="/tickets" element={<OpeningPage/>} />
 
