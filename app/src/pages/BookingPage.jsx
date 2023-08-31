@@ -3,6 +3,8 @@ import { getAvailableSpots } from "../api";
 import { TicketView } from "../components/booking/TicketView";
 import { AccommodationView } from "../components/booking/AccommodationView";
 import { CheckoutView } from "../components/booking/CheckoutView";
+import { PRICES } from "../components/booking/Constants";
+
 
 import "./pages.css";
 
@@ -20,7 +22,9 @@ export const BookingPage = () => {
     elite: 0,
     twoperson: 0,
     threeperson: 0,
+    bookingFee: PRICES.bookingFee
   });
+  
 
   const [step, setStep] = useState(0);
 
