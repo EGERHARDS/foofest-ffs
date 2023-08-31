@@ -14,6 +14,9 @@ function App() {
         <Routes>
           <Route path="/"  element={<OpeningPage/>} />
           <Route path="/booking/:name" element={<BookingPage/>} />
+          <Route path="/contact" element={<OpeningPage/>} />
+          <Route path="/tickets" element={<OpeningPage/>} />
+
           {/* <Route path="/page2" component={Page2} /> */}
         </Routes>
     </Router>

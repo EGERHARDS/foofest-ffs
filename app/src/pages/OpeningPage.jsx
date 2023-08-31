@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { getAvailableSpots } from "../api";
-import { Link } from 'react-router-dom';
-import Navbar from "../components/booking/Navbar.jsx";
+import { Link, useLocation } from 'react-router-dom';
+import {Navbar} from "../components/booking/Navbar.jsx";
 
 export const OpeningPage = () => {
   const [availableSpots, setAvailableSpots] = useState([]);
+  const location = useLocation().pathname
 
   useEffect(() => {
+
+    console.log(location)
     getAvailableSpots()
       .then((response) => response.json())
       .then((data) => {
@@ -17,7 +20,7 @@ export const OpeningPage = () => {
   return (
     
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 bg-pastel-orange min-h-screen">
-      <Navbar />
+      <Navbar path={location}/>
       {availableSpots && availableSpots.map(({ area, spots, available }, index) => (
         <CampingInformationCard 
           key={index}
