@@ -1,7 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import TicketSelector from "./TicketSelector";
+import Cart from "./Cart";
+import { useCart } from './CartContext';
+
 
 export const TicketView = (props) => {
+  const { cart, setCart } = useCart();
+
+  const handleAddToCart = (standard, elite) => {
+    setCart({ standard, elite });
+  };
+
   return (
     <div className="flex border-solid h-auto w-full border-blue-500 border-8 ">
       {/* Left Column */}
@@ -19,18 +29,13 @@ export const TicketView = (props) => {
           ticket to elevate your FOOFEST adventure to unparalleled heights.
         </div>
         {/* Space for buttons */}
-        <div className="flex">
-          <p className="text-sm">Standard</p>
-          <button className="mr-2 text-sm">Button 1</button>
-          <p className="text-sm">Elite</p>
-          <button className="mr-2 text-sm">Button 2</button>
-        </div>
+        <TicketSelector onAddToCart={handleAddToCart} />
       </div>
 
       {/* Right Column */}
-      <div className="flex-1 p-4">{/* Empty space */}
-      <div className="justify-start text-left bg-gray-100 p-4">
-        <p className="text-3xl">Your Cart</p>
+      <div className="flex-1 p-4">
+        <div className="flex-1 p-4">
+        <Cart cart={cart} />  {/* Use the Cart component here */}
       </div>
       </div>
     </div>

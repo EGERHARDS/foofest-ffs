@@ -1,6 +1,4 @@
 
-
-
 const navText = ['Home', 'Tickets', 'Contact']
 
 export const Navbar = ({path}) => {

@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Cart from "./Cart";
+import { useCart } from "./CartContext";
 
 export const AccommodationView = (props) => {
+  const { cart, setCart } = useCart();
+  const handleAddToCart = (standard, elite) => {
+    setCart({ standard, elite });
+  };
+
   return (
     <div className="flex border-solid h-auto w-full border-blue-500 border-8 ">
       {/* Left Column */}
@@ -31,8 +38,8 @@ export const AccommodationView = (props) => {
       {/* Right Column */}
       <div className="flex-1 p-4">
         {/* Empty space */}
-        <div className="justify-start text-left bg-gray-100 p-4">
-          <p className="text-3xl">Your Cart</p>
+        <div className="flex-1 p-4">
+          <Cart cart={cart} /> {/* Use the Cart component here */}
         </div>
       </div>
     </div>
