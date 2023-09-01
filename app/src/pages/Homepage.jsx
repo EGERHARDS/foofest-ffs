@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../App.css";
-import { getAvailableSpots } from "../api";
 import { Link } from "react-router-dom";
 
 export const Homepage = () => {
   return (
-    <div class="relative h-full p-32 ptop-0 align-top bg-indigo-600">
-      <div class="relative marquee opacity-20 z-0">
-        <img src="../logo-foo.png" alt="logo"></img>
+    <div className="relative h-screen bg-indigo-600">
+      <div className="absolute inset-0 marquee opacity-20 z-0">
+        <img src="../logo-foo.png" alt="logo" className="w-full h-full object-cover"></img>
       </div>
-      <div className="z-10 align-top h-full">
-          <a href="/enter" className="h-32 border-8 p-3 text-white font-semibold hover:bg-white hover:text-blue-500">ENTER THE BOOKING SITE</a>
+      <div className="flex flex-col justify-center items-center h-full z-10">
+        <Link to="/enter" className="h-16 border-8 p-3 text-white bg-indigo-600 font-semibold hover:bg-white hover:text-indigo-600">
+          ENTER THE BOOKING SITE
+        </Link>
       </div>
     </div>
   );

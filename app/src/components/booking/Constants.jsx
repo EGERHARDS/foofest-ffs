@@ -3,5 +3,6 @@ export const PRICES = {
     elite: 1299,
     twoperson: 299,
     threeperson: 399,
-    bookingFee: 99
+    bookingFee: 99,
+    greenCamping: 249
   };

@@ -22,6 +22,7 @@ export const BookingPage = () => {
     elite: 0,
     twoperson: 0,
     threeperson: 0,
+    greenCamping: 0,
     bookingFee: PRICES.bookingFee
   });
   

@@ -6,11 +6,12 @@ import { useCart } from "./CartContext";
 export const AccommodationView = (props) => {
   const { cart, setCart } = useCart();
 
-  const handleAddToCart = (twoperson, threeperson) => {
+  const handleAddToCart = (twoperson, threeperson, greenCamping) => {
     setCart(prevCart => ({
       ...prevCart,
       twoperson,
-      threeperson
+      threeperson,
+      greenCamping
     }));
   };
 

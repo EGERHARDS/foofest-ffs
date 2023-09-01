@@ -1,18 +1,17 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Cart from "./Cart";
 
 function AccomSelector({ onAddToCart }) {
   const [twoPersonCount, setTwoPersonCount] = useState(0);
   const [threePersonCount, setThreePersonCount] = useState(0);
-  
+  const [greenCamping, setGreenCamping] = useState(0); // State for the Green camping fee
 
   const handleAddToCartClick = () => {
-    onAddToCart(twoPersonCount, threePersonCount);
-};
+    onAddToCart(twoPersonCount, threePersonCount, greenCamping);
+  };
 
   return (
-    <div className="flex">
+    <div className="flex text-blue-500 text-3xl font-semibold p-4">
       {/* Two Person Accom Counter */}
       <div className="mr-4">
         <p className="text-sm mb-2">2-person tent</p>
@@ -32,7 +31,7 @@ function AccomSelector({ onAddToCart }) {
       </div>
 
       {/* Three person Accom Counter */}
-      <div>
+      <div className="mr-4">
         <p className="text-sm mb-2">3-person tent</p>
         <button
           onClick={() => setThreePersonCount(Math.max(0, threePersonCount - 1))}
@@ -48,6 +47,19 @@ function AccomSelector({ onAddToCart }) {
           +
         </button>
       </div>
+
+      {/* Green Camping Fee */}
+      <div className="mr-4">
+        <label className="text-sm mb-2">
+          <input
+            type="checkbox"
+            checked={greenCamping}
+            onChange={() => setGreenCamping(!greenCamping)}
+          />
+          Green camping fee
+        </label>
+      </div>
+
       <button
         onClick={handleAddToCartClick}
         className="flex text-3xl border-solid border-4 w-fit items-center justify-center p-4 "

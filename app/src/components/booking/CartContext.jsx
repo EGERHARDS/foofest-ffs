@@ -7,7 +7,8 @@ export const CartProvider = ({ children }) => {
         standard: 0,
         elite: 0,
         twoperson: 0,
-        threeperson: 0
+        threeperson: 0,
+        greenCamping: 0
       });
       
 
