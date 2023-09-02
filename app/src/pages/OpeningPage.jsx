@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAvailableSpots } from "../api";
 import { Link, useLocation } from "react-router-dom";
-import { Navbar } from "../components/booking/Navbar.jsx";
 import '../App.css';
 
 export const OpeningPage = () => {
@@ -23,7 +22,6 @@ export const OpeningPage = () => {
         <div className="shape shape2"></div>
         <div className="shape shape3"></div>
       </div>
-      <Navbar path={location} />
       {availableSpots &&
         availableSpots.map(({ area, spots, available }, index) => (
           <CampingInformationCard

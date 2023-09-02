@@ -1,7 +1,7 @@
 export const PersonalInfoForm = ({ ticketType, index }) => {
     return (
-      <div className="personal-info-form bg-blue-500 p-6 rounded-lg shadow-md">
-        <h3 className="text-center bg-pastel-orange text-blue-500 font-semibold text-3xl p-4 rounded-lg mb-6">{ticketType} Ticket #{index} - Personal Info</h3>
+      <div className="personal-info-form bg-indigo-600 p-6 rounded-lg shadow-md">
+        <h3 className="text-center bg-pastel-orange text-indigo-600 font-semibold text-3xl p-4 rounded-lg mb-6">{ticketType} Ticket #{index} - Personal Info</h3>
         <form className="space-y-4">
           <div>
             <label htmlFor="fullName" className="block text-white mb-2">Full Name</label>
@@ -17,7 +17,7 @@ export const PersonalInfoForm = ({ ticketType, index }) => {
           </div>
           <div>
             <label htmlFor="phone" className="block text-white mb-2">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="Phone number" required className="w-full p-2 border rounded-md" />
+            <input type="number" id="phone" name="phone" placeholder="Phone number" required className="w-full p-2 border rounded-md" />
           </div>
         </form>
       </div>

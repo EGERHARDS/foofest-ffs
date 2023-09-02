@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useCart } from "./CartContext";
 import Cart from "./Cart";
 import { PersonalInfoForm } from "./PersonalInfoForm"
+import { thankYouMessage } from "../../pages/ThankYou"
 
 export const CheckoutView = (props) => {
   const { cart } = useCart();
@@ -27,24 +28,16 @@ export const CheckoutView = (props) => {
 
 
   return (
-    <div className="flex border-solid h-auto w-full border-blue-500 border-8 ">
+    <div className=" mx-auto justify-center items-center border-solid h-auto w-1/2 border-indigo-600 border-8 bg-white ">
       {/* Left Column */}
       <div className="flex-1 flex flex-col justify-between p-4 space-y-4">
       <div className="text-red-500 font-bold">
-          Time left: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+          Your reservation is held for: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
         </div>
         {/* Space for text */}
         <div className="mb-4 text-sm text-black text-left justify-start normal-case p-4">
-          During the FooFest Gala, we provide versatile lodging choices to
-          amplify your festivity journey. Feel free to carry your personal tent
-          and immerse yourself in our lively campsite atmosphere. For those
-          prioritizing ease, we have tents already set up, awaiting your
-          presence.
-          <br></br>
-          <br></br>
-          Moreover, there's an available Eco Fee to counterbalance the
-          festival's ecological footprint. It's all about selecting what aligns
-          with your preferences!
+         Please fill out the following form (one for each ticket). 
+         Make sure to double-check the details as your tickets are going to be sent to the provided email address.
         </div>
 
         {/* Render forms for standard tickets */}
@@ -56,17 +49,15 @@ export const CheckoutView = (props) => {
         {Array(cart.elite).fill().map((_, index) => (
           <PersonalInfoForm key={`elite-${index}`} ticketType="Elite" index={index + 1} />
         ))}
-      </div>
-
-      {/* Right Column */}
-      <div className="flex-1 p-4">
+        <div className="flex-1 p-4">
         <Cart cart={cart} /> {/* Display the cart information */}
         {/* Payment Fields */}
-        <div className="mt-4">
+        <div className="justify-start text-left text-indigo-600 font-semibold bg-gray-100 p-4">
           <h3 className="text-xl font-semibold mb-2">Payment Details</h3>
           <input
-            type="text"
+            type="number"
             placeholder="Card Number"
+            maxLength="16"
             value={cardNumber}
             onChange={(e) => setCardNumber(e.target.value)}
             className="p-2 mb-2 w-full"
@@ -81,12 +72,14 @@ export const CheckoutView = (props) => {
           <input
             type="text"
             placeholder="MM/YY"
+            maxLength={5}
             value={expiryDate}
             onChange={(e) => setExpiryDate(e.target.value)}
             className="p-2 mb-2 w-full"
           />
           <input
-            type="text"
+            type="number"
+            maxLength={3}
             placeholder="CVC"
             value={cvc}
             onChange={(e) => setCvc(e.target.value)}
@@ -94,6 +87,16 @@ export const CheckoutView = (props) => {
           />
         </div>
       </div>
+      </div>
+      <button
+    className="h-auto w-full bg-indigo-600 hover:bg-white text-white text-3xl hover:text-indigo-600 font-bold py-2 px-4"
+    onClick={() => {
+        props.subtractPurchasedTickets();
+        thankYouMessage();
+    }}
+>
+    Buy
+</button>
     </div>
   );
 };

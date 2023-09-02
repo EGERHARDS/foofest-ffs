@@ -10,8 +10,13 @@ function AccomSelector({ onAddToCart }) {
     onAddToCart(twoPersonCount, threePersonCount, greenCamping);
   };
 
+  const updatePlusOne = () => {
+    setThreePersonCount(Math.min(8, threePersonCount + 1));
+    handleAddToCartClick();
+  };
+
   return (
-    <div className="flex text-blue-500 text-3xl font-semibold p-4">
+    <div className="flex text-indigo-600 text-3xl font-semibold p-4">
       {/* Two Person Accom Counter */}
       <div className="mr-4">
         <p className="text-sm mb-2">2-person tent</p>
@@ -40,10 +45,7 @@ function AccomSelector({ onAddToCart }) {
           -
         </button>
         <span>{threePersonCount}</span>
-        <button
-          onClick={() => setThreePersonCount(Math.min(8, threePersonCount + 1))}
-          className="ml-2"
-        >
+        <button onClick={updatePlusOne} className="ml-2">
           +
         </button>
       </div>

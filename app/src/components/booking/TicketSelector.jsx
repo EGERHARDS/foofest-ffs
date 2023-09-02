@@ -12,7 +12,7 @@ function TicketSelector({ onAddToCart }) {
     onAddToCart(standardCount, eliteCount);
   };
   return (
-    <div className="flex text-blue-500 text-3xl font-semibold p-4">
+    <div className="flex text-indigo-600 text-3xl font-semibold p-4">
       {/* Standard Ticket Counter */}
       <div className="mr-4">
         <p className="text-sm mb-2">Standard</p>
@@ -50,7 +50,7 @@ function TicketSelector({ onAddToCart }) {
       </div>
       <button
         onClick={handleAddToCartClick}
-        className="flex text-3xl text-blue-500 font-semibold border-solid border-4 w-fit items-center justify-center p-4 hover:bg-blue-500 hover:text-white hover:border-blue-500"
+        className="flex text-3xl text-indigo-600 font-semibold border-solid border-4 w-fit items-center justify-center p-4 hover:bg-indigo-600 hover:text-white hover:border-indigo-600"
       >
         Update Cart
       </button>

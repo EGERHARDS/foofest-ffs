@@ -14,7 +14,7 @@ function Cart() {
     PRICES.bookingFee;
 
   return (
-    <div className="justify-start text-left text-blue-500 font-semibold bg-gray-100 p-4">
+    <div className="justify-start text-left text-indigo-600 font-semibold bg-gray-100 p-4">
       <p className="text-3xl">Your Cart</p>
       <p>
         Standard Tickets: {cart.standard} x {PRICES.standard}kr = 

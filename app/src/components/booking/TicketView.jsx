@@ -15,7 +15,7 @@ export const TicketView = (props) => {
   };
 
   return (
-    <div className="flex border-solid h-full w-full border-blue-500 border-8 ">
+    <div className="flex border-solid h-full w-full border-indigo-600 border-8 ">
       {/* Left Column */}
       <div className="flex-1 flex flex-col justify-between p-4">
         {/* Space for text */}
@@ -29,6 +29,9 @@ export const TicketView = (props) => {
           ticket holders receive priority access, entry to special Elite-only
           zones, superior restroom amenities, and beyond. Opt for the Elite
           ticket to elevate your FOOFEST adventure to unparalleled heights.
+          <br></br><br></br>
+          NOTE: You can purchase up to 8 tickets in each variant at a time.
+
         </div>
         {/* Space for buttons */}
         <TicketSelector onAddToCart={handleAddToCart} />
