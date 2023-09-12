@@ -2,6 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
@@ -93,4 +94,6 @@ app.post("/fullfill-reservation", function (req, res) {
   res.send(FooFest.booking.fullfillReservation(req.body.id));
 });
 
-app.listen(6060);
+app.listen(PORT, function () {
+  console.log(`Server started on port ${PORT}`);
+});
