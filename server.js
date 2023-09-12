@@ -1,8 +1,10 @@
 /* eslint-env node, es6 */
 const express = require("express");
-var app = express();
+const cors = require("cors");
+const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
