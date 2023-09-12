@@ -1,0 +1,88 @@
+.
+├── APP-REQUIREMENTS.md
+├── DEPLOYMENT-FLY.io.md
+├── DEPLOYMENT-GIT.md
+├── DEPLOYMENT-GLITCH.md
+├── DEPLOYMENT.md
+├── FORM-REQUIREMENTS.md
+├── README.md
+├── TESTING.md
+├── TODO.md
+├── app
+│   ├── README.md
+│   ├── output.txt
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── public
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── logo-foo.png
+│   │   ├── logo-foo.svg
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   ├── src
+│   │   ├── App.css
+│   │   ├── App.js
+│   │   ├── App.test.js
+│   │   ├── api
+│   │   │   └── index.js
+│   │   ├── components
+│   │   │   └── booking
+│   │   │       ├── AccomSelector.jsx
+│   │   │       ├── AccommodationView.jsx
+│   │   │       ├── Cart.jsx
+│   │   │       ├── CartContext.jsx
+│   │   │       ├── CheckoutView.jsx
+│   │   │       ├── Constants.jsx
+│   │   │       ├── Navbar.jsx
+│   │   │       ├── PersonalInfoForm.jsx
+│   │   │       ├── TicketSelector.jsx
+│   │   │       └── TicketView.jsx
+│   │   ├── index.css
+│   │   ├── index.js
+│   │   ├── logo.svg
+│   │   ├── pages
+│   │   │   ├── BookingPage.jsx
+│   │   │   ├── Homepage.jsx
+│   │   │   ├── OpeningPage.jsx
+│   │   │   ├── ThankYou.jsx
+│   │   │   └── pages.css
+│   │   ├── reportWebVitals.js
+│   │   └── setupTests.js
+│   └── tailwind.config.js
+├── app.json
+├── css
+│   ├── TicketSelection.css
+│   └── main.css
+├── deployment
+│   ├── flyiofree.png
+│   ├── instructions1.png
+│   ├── instructions2.png
+│   ├── instructions3.png
+│   ├── instructions4.png
+│   └── instructions5.png
+├── output.txt
+├── package-lock.json
+├── package.json
+├── restartServer.png
+├── server.js
+└── src
+    ├── Bands.js
+    ├── Booking.js
+    ├── EventLog.js
+    ├── Festival.js
+    ├── Schedule.js
+    ├── foofest.js
+    ├── static
+    │   ├── bands.json
+    │   └── settings.js
+    └── util
+        ├── events.js
+        ├── numberToTime.js
+        ├── observer.js
+        ├── rnd.js
+        └── shuffle.js
+
+13 directories, 73 files
