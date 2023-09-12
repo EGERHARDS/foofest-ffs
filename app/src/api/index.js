@@ -1,8 +1,8 @@
 export const getAvailableSpots = () =>
-  fetch(`http://localhost:6060/available-spots`);
+  fetch(`http://localhost:3000/available-spots`);
 
 export const updateAvailableSpots = (spots) =>
-  fetch(`http://localhost:6060/reserve-spot`, {
+  fetch(`http://localhost:3000/reserve-spot`, {
     method: "PUT",
     headers: { "Content-Type": `application/json` },
     body: JSON.stringify(spots),
